@@ -16,7 +16,7 @@
     <header>
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
-                   <h1 class="display-6">Week 4  -  Trivia Game</h1>
+                <h1 class="display-6">Week 4 - Trivia Game</h1>
             </div>
         </div>
     </header>
@@ -38,8 +38,9 @@
     <!-- This section contains all the text for the game that gets updated -->
 
     <br>
+    <img id ="leftPanel" src= "assets/images/left panel.png">
+    <img id ="rightPanel" src= "assets/images/right panel.jpg">
 
-  
     <div id="mainArea" style="display:none">
         <div class="card">
             <div class="card-body">
@@ -49,48 +50,78 @@
         </div>
 
 
-
+ 
 
         <div class="card">
-            <div class="card-body">
+           
+            <div class="card-body" id="gameQuestions">
                 <p id="question1" class="questions">Who is the main hero in the Legend of Zelda Series?</p>
-                <label class="radio-inline"><input type="radio" name="question1"> Zelda </label>
-                <label class="radio-inline"><input type="radio" name="question1"> Mario </label>
-                <label class="radio-inline"><input type="radio" name="question1"> Tingle </label>
+                <label class="radio-inline incorrect1"><input type="radio" name="question1" id="incorrect1"> Zelda </label>
+                <label class="radio-inline incorrect1"><input type="radio" name="question1" id="incorrect1"> Mario </label>
+                <label class="radio-inline incorrect1"><input type="radio" name="question1" id="incorrect1"> Tingle </label>
                 <label class="radio-inline"><input type="radio" name="question1" id="correct1"> Link </label>
 
                 <hr>
 
                 <p id="question2" class="questions">In the original Legend of Zelda for NES, what are the lost word maze
                     directions?</p>
-                <label class="radio-inline"><input type="radio" name="question2"> South, East, North, East </label>
-                <label class="radio-inline"><input type="radio" name="question2"> West, North, North, East </label>
+                <label class="radio-inline incorrect2"><input type="radio" name="question2" id="incorrect2"> South, East, North, East </label>
+                <label class="radio-inline incorrect2"><input type="radio" name="question2" id="incorrect2"> West, North, North, East </label>
                 <label class="radio-inline"><input type="radio" name="question2" id="correct2"> North, West, South, West
                 </label>
-                <label class="radio-inline"><input type="radio" name="question2"> Just play your Ocarina and the bird will get you. </label>
+                <label class="radio-inline incorrect2"><input type="radio" name="question2" id="incorrect2"> Just play your Ocarina and the bird
+                    will get you. </label>
 
                 <hr>
                 <p id="question3" class="questions">What's the name of Link's spirit companion in Skyward Sword?</p>
-                <label class="radio-inline"><input type="radio" name="question3"> Fee </label>
+                <label class="radio-inline incorrect3"><input type="radio" name="question3" id="incorrect3"> Fee </label>
                 <label class="radio-inline"><input type="radio" name="question3" id="correct3"> Fi </label>
-                <label class="radio-inline"><input type="radio" name="question3"> Fo</label>
-                <label class="radio-inline"><input type="radio" name="question3"> Fum </label>
+                <label class="radio-inline incorrect3"><input type="radio" name="question3" id="incorrect3"> Fo</label>
+                <label class="radio-inline incorrect3"><input type="radio" name="question3" id="incorrect3"> Fum </label>
 
                 <hr>
                 <p id="question4" class="questions">In A Link to the Past, which of the following places will the flute
                     NOT take Link?</p>
-                <label class="radio-inline"><input type="radio" name="question4"> Death Mountain </label>
-                <label class="radio-inline"><input type="radio" name="question4"> Link's House </label>
+                <label class="radio-inline incorrect4"><input type="radio" name="question4" id="incorrect4"> Death Mountain </label>
+                <label class="radio-inline incorrect4"><input type="radio" name="question4" id="incorrect4"> Link's House </label>
                 <label class="radio-inline"><input type="radio" name="question4" id="correct4"> The Lost Woods</label>
-                <label class="radio-inline"><input type="radio" name="question4"> The Pyramid of Power </label>
-
-           
-
+                <label class="radio-inline incorrect4"><input type="radio" name="question4" id="incorrect4"> The Pyramid of Power </label>
+               
+                <hr>
+                <p id="question5" class="questions">In Super Smash Bros. Brawl, what is the name of Link's Final Smash?</p>
+                <label class="radio-inline incorrect5"><input type="radio" name="question5" id="incorrect5"> Triforce of Courage </label>
+                <label class="radio-inline incorrect5"><input type="radio" name="question5" id="incorrect5"> Master Sword Attack </label>
+                <label class="radio-inline"><input type="radio" name="question5" id="correct5"> Triforce Slash</label>
+                <label class="radio-inline incorrect5"><input type="radio" name="question5" id="incorrect5"> Hylian Blitz </label>
+                        
+              
+              
+              
+              
                 <div id="doneButton">
                     <button type="button" class="btn btn-outline-primary" id="doneGame">Done</button>
                 </div>
+            </div>
+            <div class="card-body" id="gameResults" style="display:none">
+                <p id="correctAnswersText"> Correct: </p>
+                <p id="incorrectAnswersText">Incorrect: </p>
+                <p id="unansweredText">Unanswered: </p>
+                <br>
+                <div id="doneButton">
+                        <button type="button" class="btn btn-outline-primary" id="playAgain">Play Again</button>
+                    </div>
+
+
 
             </div>
+
+
+
+
+
+
+
+
 
         </div>
 
@@ -103,12 +134,17 @@
 
 
 
-
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.js" integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-       
     <script type="text/javascript" src="assets/javascript/trivia.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.js"
+        integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+
 </body>
 
 </html>
